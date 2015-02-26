@@ -67,7 +67,7 @@ ALTER SEQUENCE cars_id_seq OWNED BY cars.id;
 CREATE TABLE parts (
     id integer NOT NULL,
     name character varying,
-    car_id integer,
+    car_id integer NOT NULL,
     created_at timestamp without time zone NOT NULL,
     updated_at timestamp without time zone NOT NULL
 );
@@ -146,11 +146,11 @@ CREATE UNIQUE INDEX unique_schema_migrations ON schema_migrations USING btree (v
 
 
 --
--- Name: fk_rails_f2a174588a; Type: FK CONSTRAINT; Schema: public; Owner: -
+-- Name: fk_rails_c62b9db2f1; Type: FK CONSTRAINT; Schema: public; Owner: -
 --
 
 ALTER TABLE ONLY parts
-    ADD CONSTRAINT fk_rails_f2a174588a FOREIGN KEY (car_id) REFERENCES cars(id);
+    ADD CONSTRAINT fk_rails_c62b9db2f1 FOREIGN KEY (car_id) REFERENCES cars(id);
 
 
 --

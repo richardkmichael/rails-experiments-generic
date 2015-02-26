@@ -2,7 +2,7 @@ class CreateParts < ActiveRecord::Migration
   def change
     create_table :parts do |t|
       t.string :name
-      t.references :car, index: true
+      t.references :car, index: true, null: false
 
       t.timestamps null: false
     end
